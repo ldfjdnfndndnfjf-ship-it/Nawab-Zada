@@ -3,143 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAWAB ZADA | OFFICIAL HUB</title>
+    <title>NAWAB ZADA | MASTER HUB</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-        
-        * { box-sizing: border-box; }
-        body { 
-            background: #000; 
-            color: #fff; 
-            font-family: 'Orbitron', sans-serif; 
-            margin: 0; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            overflow-x: hidden;
-        }
+        * { box-sizing: border-box; transition: 0.3s; }
+        body { background: #000; color: #fff; font-family: 'Orbitron', sans-serif; margin: 0; text-align: center; }
 
-        /* Animated Matrix Background Effect */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), 
-                        linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-            background-size: 100% 2px, 3px 100%;
-            pointer-events: none;
-            z-index: 10;
-        }
+        .hero { padding: 40px 20px; border-bottom: 1px solid #222; }
+        .hero h1 { font-size: 2.5rem; color: #ff0000; text-shadow: 0 0 15px #ff0000; margin: 0; }
 
-        .hero { text-align: center; padding: 60px 20px; z-index: 5; }
-        .hero h1 { 
-            font-size: 3.5rem; 
-            color: #ff0000; 
-            text-shadow: 0 0 10px #ff0000, 0 0 30px #ff0000; 
-            margin: 0;
-            letter-spacing: 8px;
-        }
-        .hero p { color: #888; letter-spacing: 3px; font-size: 0.9rem; margin-top: 10px; }
-        
-        .grid { 
+        .container { 
             display: grid; 
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
-            gap: 25px; 
-            width: 90%; 
-            max-width: 1100px; 
-            padding: 20px; 
-            z-index: 5;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+            gap: 15px; width: 95%; max-width: 1200px; margin: 30px auto; 
         }
 
+        /* VIP Card Style */
         .card { 
-            background: rgba(15, 15, 15, 0.9); 
-            border: 1px solid #333; 
-            padding: 30px; 
-            border-radius: 5px; 
-            text-align: center; 
-            transition: 0.5s; 
-            position: relative;
-            overflow: hidden;
+            background: #0a0a0a; border: 1px solid #333; padding: 25px; 
+            border-radius: 8px; cursor: pointer; position: relative; 
         }
-
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,0,0,0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .card:hover::before { left: 100%; }
-
-        .card:hover { 
-            border-color: #ff0000; 
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
-            transform: translateY(-5px);
-        }
-
-        .card h3 { color: #fff; text-transform: uppercase; margin-bottom: 15px; font-size: 1.2rem; }
-        .card p { color: #aaa; font-size: 0.8rem; margin-bottom: 20px; }
+        .card:hover { border-color: #ff0000; box-shadow: 0 0 15px rgba(255, 0, 0, 0.4); transform: translateY(-5px); }
+        .card h3 { font-size: 1rem; margin-bottom: 10px; text-transform: uppercase; }
         
-        .btn { 
-            background: transparent; 
-            border: 1px solid #ff0000; 
-            color: #ff0000; 
-            padding: 12px 25px; 
-            cursor: pointer; 
-            font-weight: bold; 
-            transition: 0.3s; 
-            text-transform: uppercase;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
-        }
+        .status { font-size: 0.6rem; letter-spacing: 2px; font-weight: bold; padding: 3px 8px; border-radius: 3px; }
+        .working { background: #ff0000; color: #000; }
+        .soon { background: #222; color: #555; }
 
-        .btn:hover { 
-            background: #ff0000; 
-            color: #000; 
-            box-shadow: 0 0 15px #ff0000;
-        }
-
-        .footer { margin: 50px 0; font-size: 0.7rem; color: #333; letter-spacing: 2px; }
+        /* Sections Hidden by Default */
+        .page-section { display: none; width: 90%; max-width: 800px; margin: 20px auto; background: #0a0a0a; border: 1px solid #ff0000; padding: 20px; border-radius: 10px; }
+        .back-btn { background: transparent; border: 1px solid #fff; color: #fff; padding: 8px 15px; cursor: pointer; margin-bottom: 15px; font-size: 0.7rem; }
     </style>
 </head>
 <body>
 
     <div class="hero">
         <h1>NAWAB ZADA</h1>
-        <p>PREMIUM CYBER ARSENAL</p>
+        <p>CYBER MASTER INTERFACE</p>
     </div>
 
-    <div class="grid">
-        <div class="card">
-            <h3>Termux Mastery</h3>
-            <p>Advanced Hacking & Terminal Commands Course</p>
-            <button class="btn">Start Learning</button>
-        </div>
-        
-        <div class="card">
-            <h3>WhatsApp Arsenal</h3>
-            <p>Exclusive Tools for Unban & Bot Modding</p>
-            <button class="btn">Open Tools</button>
+    <div class="container" id="main-grid">
+        <div class="card" onclick="alert('Quran Pak Section Coming Soon!')">
+            <h3>Quran Pak</h3>
+            <span class="status soon">COMING SOON</span>
         </div>
 
-        <div class="card">
-            <h3>Personal Contact</h3>
-            <p>Direct Access to Nawab ZADA Official</p>
-            <button class="btn">Message Now</button>
+        <div class="card" onclick="showSection('unban-section')">
+            <h3>Unban Tool</h3>
+            <span class="status working">WORKING</span>
         </div>
 
-        <div class="card">
-            <h3>Bot Pairing</h3>
-            <p>Fastest Way to Link Your Nawab ZADA Bot</p>
-            <button class="btn">Generate Code</button>
+        <div class="card" onclick="alert('Channels Coming Soon!')">
+            <h3>Our Channels</h3>
+            <span class="status soon">COMING SOON</span>
         </div>
+
+        <div class="card"><pre><h3>Tool #04</h3><span class="status soon">COMING SOON</span></pre></div>
+        <div class="card"><pre><h3>Tool #05</h3><span class="status soon">COMING SOON</span></pre></div>
+        <div class="card"><pre><h3>Tool #06</h3><span class="status soon">COMING SOON</span></pre></div>
+        <div class="card"><pre><h3>Tool #07</h3><span class="status soon">COMING SOON</span></pre></div>
+        <div class="card"><pre><h3>Tool #08</h3><span class="status soon">COMING SOON</span></pre></div>
+        <div class="card"><pre><h3>Tool #09</h3><span class="status soon">COMING SOON</span></pre></div>
+        <div class="card"><pre><h3>Tool #10</h3><span class="status soon">COMING SOON</span></pre></div>
     </div>
 
-    <div class="footer">
-        © NAWAB ZADA | NO RIGHTS RESERVED. JUST SKILLS.
-    </div>
+    <div id="unban-section" class="page-section">
+        <button class="back-btn" onclick="showHome()">← BACK</button>
+        <h2 style="color:#ff0000">UNBAN MAILS</h2>
+        <p style="font-size:0.8rem">Copy working mails from here...</p>
+        </div>
 
+    <script>
+        function showSection(id) {
+            document.getElementById('main-grid').style.display = 'none';
+            document.getElementById(id).style.display = 'block';
+        }
+        function showHome() {
+            document.getElementById('main-grid').style.display = 'grid';
+            const sections = document.getElementsByClassName('page-section');
+            for(let s of sections) s.style.display = 'none';
+        }
+    </script>
 </body>
 </html>
