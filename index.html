@@ -68,6 +68,50 @@
     </div>
 
     <div id="unban-section" class="page-section">
+    <button class="back-btn" onclick="showHome()">← BACK TO MASTER HUB</button>
+    <h2 style="color: #ff0000; text-shadow: 0 0 10px #ff0000;">WHATSAPP UNBAN SERVICE</h2>
+    <p style="font-size: 0.8rem; color: #888; margin-bottom: 25px;">Select a VIP Mail, Copy it, and send to WhatsApp Support.</p>
+
+    <div class="mail-box">
+        <h4>#01 Permanent Ban Appeal (VIP)</h4>
+        <div class="mail-content" id="mail1">Subject: Question about my account<br><br>My WhatsApp account has been banned permanently without any warning. I use this number for my personal work and I have not violated any terms. Please investigate and restore my service. My Number: [Apna Number Likhein]</div>
+        <button class="copy-btn" onclick="copyMail('mail1')">COPY MAIL</button>
+    </div>
+
+    <div class="mail-box">
+        <h4>#02 Spam Mistake Appeal</h4>
+        <div class="mail-content" id="mail2">Subject: My account is deactivated<br><br>I believe my account was flagged for spam by mistake. I am a regular user and I always follow WhatsApp's community guidelines. Please review my account carefully and unban me. Number: [Apna Number Likhein]</div>
+        <button class="copy-btn" onclick="copyMail('mail2')">COPY MAIL</button>
+    </div>
+
+    <div class="mail-box">
+        <h4>#03 Account Hacked/Security Ban</h4>
+        <div class="mail-content" id="mail3">Subject: Support for banned account<br><br>I lost access to my phone and I think someone else used my WhatsApp. Now it shows my number is banned. This is my private number, please help me get it back. Number: [Apna Number Likhein]</div>
+        <button class="copy-btn" onclick="copyMail('mail3')">COPY MAIL</button>
+    </div>
+
+    <div class="mail-box">
+        <h4>#04 Professional/Work Number</h4>
+        <div class="mail-content" id="mail4">Subject: Urgent: Business Account Banned<br><br>My professional WhatsApp account is currently banned. This is affecting my daily work and communication with clients. I request you to please lift the ban as soon as possible. Number: [Apna Number Likhein]</div>
+        <button class="copy-btn" onclick="copyMail('mail4')">COPY MAIL</button>
+    </div>
+
+    <div class="mail-box">
+        <h4>#05 Login & Ban Issue</h4>
+        <div class="mail-content" id="mail5">Subject: Cannot use WhatsApp on my number<br><br>I was trying to login but it says my number is banned. I have done nothing wrong. Please reset my account status so I can use it again. Thank you. Number: [Apna Number Likhein]</div>
+        <button class="copy-btn" onclick="copyMail('mail5')">COPY MAIL</button>
+    </div>
+</div>
+
+<script>
+    function copyMail(id) {
+        const text = document.getElementById(id).innerText;
+        navigator.clipboard.writeText(text).then(() => {
+            alert("Nawab ZADA: Mail Copy Ho Gayi! Ab WhatsApp Support ko bhej do.");
+        });
+    }
+            </script>
+    
         <button class="back-btn" onclick="showHome()">← BACK</button>
         <h2 style="color:#ff0000">UNBAN MAILS</h2>
         <p style="font-size:0.8rem">Copy working mails from here...</p>
