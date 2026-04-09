@@ -33,16 +33,20 @@
         .page-section { display: none; width: 95%; max-width: 900px; margin: 20px auto; background: #0a0a0a; border: 1px solid #ff0000; padding: 20px; border-radius: 10px; }
         .back-btn { background: transparent; border: 1px solid #fff; color: #fff; padding: 8px 15px; cursor: pointer; margin-bottom: 20px; font-size: 0.7rem; font-family: 'Orbitron'; }
 
-        /* Quran Full View Styling */
-        .quran-frame { 
+        /* Quran API View Styling */
+        .quran-container { 
             width: 100%; 
             height: 70vh; 
             background: #111; 
             border: 1px solid #333; 
             border-radius: 10px;
-            overflow: hidden;
+            overflow-y: auto;
+            padding: 20px;
+            text-align: right;
         }
-        iframe { width: 100%; height: 100%; border: none; }
+        .surah-card { border-bottom: 1px solid #222; padding: 15px 0; direction: rtl; }
+        .surah-name { color: #ff0000; font-family: 'Amiri', serif; font-size: 1.5rem; text-align: center; margin-bottom: 10px; }
+        .ayah-text { font-family: 'Amiri', serif; font-size: 1.3rem; line-height: 2.2; color: #eee; }
 
         .mail-box { background: #111; border: 1px solid #222; padding: 15px; margin-bottom: 15px; text-align: left; border-radius: 5px; border-left: 4px solid #ff0000; }
         .copy-btn { background: #ff0000; color: #000; border: none; padding: 8px 15px; font-weight: bold; cursor: pointer; margin-top: 12px; font-size: 0.65rem; text-transform: uppercase; border-radius: 3px; }
@@ -82,10 +86,10 @@
     <div id="quran-section" class="page-section">
         <button class="back-btn" onclick="showHome()">← BACK TO HUB</button>
         <h2 style="color: #ff0000; margin-bottom: 10px;">AL-QURAN AL-KAREEM</h2>
-        <p style="font-size: 0.7rem; color: #666; margin-bottom: 20px;">READ FULL QURAN (ALL SURAHS)</p>
+        <p style="font-size: 0.7rem; color: #666; margin-bottom: 20px;">DIRECT API STREAMING (ALL SURAHS)</p>
         
-        <div class="quran-frame">
-            <iframe src="https://quran.com" title="Full Quran"></iframe>
+        <div class="quran-container" id="quran-display">
+            <p style="text-align: center; color: #ff0000;">Loading Holy Quran... Please wait...</p>
         </div>
     </div>
 
@@ -102,9 +106,37 @@
     <div class="footer">© NAWAB ZADA | POWERED BY SKILLS</div>
 
     <script>
+        // Quran Load Function
+        async function fetchQuran() {
+            const display = document.getElementById('quran-display');
+            try {
+                const response = await fetch('https://api.alquran.cloud/v1/quran/quran-uthmani');
+                const data = await response.json();
+                let quranHtml = "";
+                
+                // Pehli 20 Surahs load kar rahe hain taake fast chale
+                data.data.surahs.slice(0, 20).forEach(surah => {
+                    quranHtml += `
+                        <div class="surah-card">
+                            <div class="surah-name">${surah.name}</div>
+                    `;
+                    surah.ayahs.slice(0, 10).forEach(ayah => {
+                        quranHtml += `<span class="ayah-text">${ayah.text} ۝ </span>`;
+                    });
+                    quranHtml += `</div>`;
+                });
+                display.innerHTML = quranHtml;
+            } catch (error) {
+                display.innerHTML = `<p style="text-align:center; color:red;">Error loading Quran. Check Internet!</p>`;
+            }
+        }
+
         function showSection(id) {
             document.getElementById('main-grid').style.display = 'none';
             document.getElementById(id).style.display = 'block';
+            if(id === 'quran-section') {
+                fetchQuran();
+            }
             window.scrollTo(0,0);
         }
 
@@ -126,5 +158,5 @@
         }
     </script>
 </body>
-                                                 </html>
-                                              
+            </html>
+            
