@@ -16,56 +16,36 @@
             
             <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition">
                 <h2 class="text-xl font-bold text-yellow-500 mb-4">#1 Termux Basics</h2>
-                <p class="text-gray-300 text-sm">Basic commands for beginners to start with Termux.</p>
-                <button class="mt-4 w-full bg-yellow-600 hover:bg-yellow-700 py-2 rounded">Open</button>
+                <p class="text-gray-300 text-sm mb-4">Basic to Advance Termux commands.</p>
+                <button onclick="document.getElementById('modal').classList.remove('hidden')" class="mt-4 w-full bg-yellow-600 hover:bg-yellow-700 py-2 rounded font-bold">Open</button>
             </div>
             
-            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition">
-                <h2 class="text-xl font-bold text-yellow-500 mb-4">#2 Advance Commands</h2>
-                <p class="text-gray-300 text-sm">Advanced scripting and automation commands.</p>
-            </div>
-
-            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition">
-                <h2 class="text-xl font-bold text-yellow-500 mb-4">#3 My Tools</h2>
-                <p class="text-gray-300 text-sm">Direct links to all my developed tools.</p>
-            </div>
-
-            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition">
-                <h2 class="text-xl font-bold text-yellow-500 mb-4">#4 Custom Scripts</h2>
-                <p class="text-gray-300 text-sm">Repository of my custom Termux scripts.</p>
-            </div>
-
-            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition">
-                <h2 class="text-xl font-bold text-yellow-500 mb-4">#5 Mobile Privacy</h2>
-                <p class="text-gray-300 text-sm">Secure your mobile from tracking.</p>
-            </div>
-
-            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition">
-                <h2 class="text-xl font-bold text-yellow-500 mb-4">#6 Anti-Hack Guide</h2>
-                <p class="text-gray-300 text-sm">How to save yourself from cyber attacks.</p>
-            </div>
-
-            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition">
-                <h2 class="text-xl font-bold text-yellow-500 mb-4">#7 Network Security</h2>
-                <p class="text-gray-300 text-sm">Learn to secure your connection.</p>
-            </div>
-
-            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition">
-                <h2 class="text-xl font-bold text-yellow-500 mb-4">#8 Phishing Defense</h2>
-                <p class="text-gray-300 text-sm">Identifying and avoiding fake links.</p>
-            </div>
-
-            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition">
-                <h2 class="text-xl font-bold text-yellow-500 mb-4">#9 System Cleanup</h2>
-                <p class="text-gray-300 text-sm">Optimizing device performance.</p>
-            </div>
-
-            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition">
-                <h2 class="text-xl font-bold text-yellow-500 mb-4">#10 Contact Me</h2>
-                <p class="text-gray-300 text-sm">Get in touch for support and tools.</p>
-            </div>
-            
+            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition"><h2 class="text-xl font-bold text-yellow-500 mb-4">#2 Advance</h2></div>
+            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition"><h2 class="text-xl font-bold text-yellow-500 mb-4">#3 My Tools</h2></div>
+            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition"><h2 class="text-xl font-bold text-yellow-500 mb-4">#4 Custom Scripts</h2></div>
+            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition"><h2 class="text-xl font-bold text-yellow-500 mb-4">#5 Privacy</h2></div>
+            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition"><h2 class="text-xl font-bold text-yellow-500 mb-4">#6 Anti-Hack</h2></div>
+            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition"><h2 class="text-xl font-bold text-yellow-500 mb-4">#7 Network</h2></div>
+            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition"><h2 class="text-xl font-bold text-yellow-500 mb-4">#8 Phishing</h2></div>
+            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition"><h2 class="text-xl font-bold text-yellow-500 mb-4">#9 Cleanup</h2></div>
+            <div class="bg-gray-800 p-6 rounded-xl border border-yellow-600 hover:border-yellow-400 transition"><h2 class="text-xl font-bold text-yellow-500 mb-4">#10 Contact</h2></div>
         </div>
     </div>
+
+    <div id="modal" class="hidden fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4">
+        <div class="bg-gray-900 border border-yellow-500 p-8 rounded-xl max-w-lg w-full max-h-[80vh] overflow-y-auto">
+            <h2 class="text-2xl font-bold text-yellow-500 mb-4">Termux Command List</h2>
+            <div class="text-gray-300 space-y-4">
+                <p><code>pkg update && pkg upgrade -y</code><br><span class="text-xs text-gray-500">Update repository</span></p>
+                <p><code>pkg install git python python2 php ruby curl -y</code><br><span class="text-xs text-gray-500">Install base packages</span></p>
+                <p><code>git clone [link]</code><br><span class="text-xs text-gray-500">Clone GitHub repos</span></p>
+                <p><code>chmod +x *</code><br><span class="text-xs text-gray-500">Give permission</span></p>
+                <p><code>ls</code> / <code>cd</code> / <code>rm -rf</code><br><span class="text-xs text-gray-500">File management</span></p>
+                <p><code>pkg install nmap</code><br><span class="text-xs text-gray-500">Network scanner</span></p>
+            </div>
+            <button onclick="document.getElementById('modal').classList.add('hidden')" class="mt-6 w-full bg-red-600 py-2 rounded">Close</button>
+        </div>
+    </div>
+
 </body>
 </html>
